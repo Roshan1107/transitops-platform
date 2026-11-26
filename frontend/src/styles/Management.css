@@ -1,0 +1,177 @@
+/* ==========================================================================
+   MANAGEMENT & DATA TABLES STYLES (BUSES, ROUTES, DRIVERS, TRIPS)
+   ========================================================================== */
+
+.buses-page, 
+.drivers-page, 
+.routes-page, 
+.trips-page {
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.buses-header, 
+.routes-header, 
+.drivers-header, 
+.trips-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.buses-header h1, 
+.routes-header h1, 
+.drivers-header h1, 
+.trips-header h1 {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--dark-bg);
+}
+
+.add-bus-btn, 
+.add-route-btn {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s ease;
+}
+
+.add-bus-btn:hover, 
+.add-route-btn:hover {
+  background: var(--primary-hover);
+}
+
+/* Forms Styling */
+.bus-form-container, 
+.route-form-container, 
+.driver-form, 
+.trip-form {
+  background: #ffffff;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+  margin-bottom: 32px;
+}
+
+.bus-form-container h2, 
+.route-form-container h2, 
+.driver-form h2, 
+.trip-form h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: var(--dark-bg);
+}
+
+.bus-form, 
+.route-form, 
+.trip-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.bus-form input, 
+.route-form input, 
+.driver-form input, 
+.trip-form select, 
+.trip-form input {
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  background: #ffffff;
+}
+
+.bus-form button, 
+.route-form button, 
+.driver-form button, 
+.trip-form button {
+  background: var(--primary);
+  color: #ffffff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Data Tables Styling */
+.bus-table-container, 
+.route-table-container {
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.bus-table, 
+.route-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.bus-table th, 
+.route-table th {
+  background: #f8fafc;
+  text-align: left;
+  padding: 16px 20px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.bus-table td, 
+.route-table td {
+  padding: 16px 20px;
+  font-size: 14px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.edit-btn {
+  background: #eff6ff;
+  color: var(--primary);
+  border: 1px solid #bfdbfe;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.delete-btn {
+  background: #fef2f2;
+  color: var(--danger);
+  border: 1px solid #fecaca;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Status Badges */
+.bus-status, 
+.route-status, 
+.trip-status {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.bus-status.active, .route-status.active { background: #d1fae5; color: #059669; }
+.bus-status.maintenance { background: #fef3c7; color: #d97706; }
+.bus-status.inactive, .route-status.inactive { background: #fee2e2; color: #dc2626; }

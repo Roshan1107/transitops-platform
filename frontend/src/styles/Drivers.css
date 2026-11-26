@@ -1,0 +1,367 @@
+/* ==========================================================================
+   DRIVER MANAGEMENT COMPONENT STYLES
+   ========================================================================== */
+
+.drivers-page {
+  padding: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: calc(100vh - 74px);
+}
+
+/* Drivers Header */
+.drivers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color, #cbd5e1);
+}
+
+.drivers-header h1 {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--dark-bg, #0b1329);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.drivers-header p {
+  color: var(--text-muted, #64748b);
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.driver-count {
+  background: #eff6ff;
+  color: var(--primary, #2563eb);
+  border: 1px solid #bfdbfe;
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 1px 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Driver Creation / Edit Form */
+.driver-form {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: var(--radius-lg, 16px);
+  border: 1px solid var(--border-color, #cbd5e1);
+  box-shadow: var(--shadow-md, 0 4px 14px rgba(0, 0, 0, 0.08));
+  margin-bottom: 36px;
+  transition: box-shadow 0.2s ease;
+}
+
+.driver-form:hover {
+  box-shadow: var(--shadow-lg, 0 10px 25px -5px rgba(0, 0, 0, 0.12));
+}
+
+.driver-form h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--dark-bg, #0b1329);
+  margin-bottom: 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.driver-form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.driver-form input,
+.driver-form select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color, #cbd5e1);
+  border-radius: var(--radius-sm, 8px);
+  font-size: 14px;
+  background-color: #f8fafc;
+  color: var(--text-main, #0f172a);
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.driver-form input:focus,
+.driver-form select:focus {
+  background-color: #ffffff;
+  border-color: var(--primary, #2563eb);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.driver-form-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.driver-form-actions button[type="submit"] {
+  background: var(--primary, #2563eb);
+  color: #ffffff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm, 8px);
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transition: all 0.2s ease;
+}
+
+.driver-form-actions button[type="submit"]:hover {
+  background: var(--primary-hover, #1d4ed8);
+  transform: translateY(-1px);
+}
+
+.driver-form-actions button[type="button"] {
+  background: #f1f5f9;
+  color: var(--text-muted, #64748b);
+  border: 1px solid #cbd5e1;
+  padding: 12px 24px;
+  border-radius: var(--radius-sm, 8px);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.driver-form-actions button[type="button"]:hover {
+  background: #e2e8f0;
+  color: var(--text-main, #0f172a);
+}
+
+/* Empty State */
+.no-drivers {
+  background: #ffffff;
+  padding: 60px 30px;
+  border-radius: var(--radius-lg, 16px);
+  border: 1px dashed var(--border-color, #cbd5e1);
+  text-align: center;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.no-drivers h2 {
+  font-size: 22px;
+  color: var(--dark-bg, #0b1329);
+  margin-bottom: 8px;
+}
+
+.no-drivers p {
+  color: var(--text-muted, #64748b);
+  font-size: 14px;
+}
+
+/* Drivers Grid */
+.drivers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+/* Driver Card */
+.driver-card {
+  background: #ffffff;
+  border-radius: var(--radius-lg, 16px);
+  border: 1px solid var(--border-color, #cbd5e1);
+  box-shadow: var(--shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.08));
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.driver-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.driver-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg, 0 10px 25px -5px rgba(0, 0, 0, 0.12));
+  border-color: #93c5fd;
+}
+
+.driver-card:hover::before {
+  opacity: 1;
+}
+
+/* Driver Card Header */
+.driver-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.driver-card-header h2 {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--dark-bg, #0b1329);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.driver-avatar-icon {
+  font-size: 20px;
+}
+
+/* Driver Status Badges */
+.driver-status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.driver-status-badge.active {
+  background: #ecfdf5;
+  color: #059669;
+  border: 1px solid #a7f3d0;
+}
+
+.driver-status-badge.inactive {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.driver-status-badge.on_leave {
+  background: #fffbe6;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+/* Driver Info List */
+.driver-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.driver-info-list p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px dashed #f1f5f9;
+  font-size: 13px;
+  margin: 0;
+}
+
+.driver-info-list p:last-child {
+  border-bottom: none;
+}
+
+.driver-info-list span {
+  color: var(--text-muted, #64748b);
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.driver-info-list strong {
+  color: var(--dark-bg, #0b1329);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.assigned-bus-pill {
+  background: #f1f5f9;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+  color: var(--primary, #2563eb) !important;
+}
+
+/* Driver Card Actions */
+.driver-card-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.driver-card-actions button {
+  padding: 8px 16px;
+  border-radius: var(--radius-sm, 8px);
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.driver-card-actions button:first-child {
+  background: #eff6ff;
+  color: var(--primary, #2563eb);
+  border: 1px solid #bfdbfe;
+}
+
+.driver-card-actions button:first-child:hover {
+  background: var(--primary, #2563eb);
+  color: #ffffff;
+}
+
+.driver-card-actions button:last-child {
+  background: #fef2f2;
+  color: var(--danger, #dc2626);
+  border: 1px solid #fecaca;
+}
+
+.driver-card-actions button:last-child:hover {
+  background: var(--danger, #dc2626);
+  color: #ffffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .drivers-page {
+    padding: 20px 16px;
+  }
+  .drivers-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .driver-form {
+    padding: 20px;
+  }
+  .driver-form-grid {
+    grid-template-columns: 1fr;
+  }
+  .drivers-grid {
+    grid-template-columns: 1fr;
+  }
+}
